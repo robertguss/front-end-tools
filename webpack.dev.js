@@ -3,6 +3,7 @@ const merge = require('webpack-merge');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -11,6 +12,7 @@ module.exports = merge(common, {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: 9000,
+    hot: true,
   },
   module: {
     rules: [
@@ -42,6 +44,8 @@ module.exports = merge(common, {
     // https://github.com/gajus/write-file-webpack-plugin
     new WriteFilePlugin({
       useHashIndex: true,
+      // exclude hot-update files
+      test: /^(?!.*(hot)).*/,
     }),
     // https://github.com/Va1/browser-sync-webpack-plugin
     new BrowserSyncPlugin(
@@ -60,5 +64,6 @@ module.exports = merge(common, {
         reload: false,
       }
     ),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 });
