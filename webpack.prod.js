@@ -1,7 +1,14 @@
+const glob = require('glob');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const common = require('./webpack.common');
+
+const PATHS = {
+  src: path.join(__dirname, 'src'),
+};
 
 module.exports = merge(common, {
   mode: 'production',
@@ -26,6 +33,10 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
+    }),
+    // https://github.com/FullHuman/purgecss-webpack-plugin
+    new PurgecssPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
     }),
   ],
 });
