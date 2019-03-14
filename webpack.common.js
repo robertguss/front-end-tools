@@ -1,4 +1,5 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -38,5 +39,7 @@ module.exports = {
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
     new CleanWebpackPlugin(),
+    // https://github.com/geowarin/friendly-errors-webpack-plugin
+    new FriendlyErrorsWebpackPlugin(),
   ],
 };
