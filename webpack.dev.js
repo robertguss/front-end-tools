@@ -1,9 +1,10 @@
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const path = require('path');
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -11,8 +12,14 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
+    // hot: true,
+    // https: true,
+    inline: false,
     port: 9000,
-    hot: true,
+    watchContentBase: true,
+    // watchOptions: {
+    //   poll: true,
+    // },
   },
   module: {
     rules: [
@@ -61,9 +68,10 @@ module.exports = merge(common, {
       {
         // prevent BrowserSync from reloading the page
         // and let Webpack Dev Server take care of this
-        reload: false,
+        reload: true,
       }
     ),
-    new webpack.HotModuleReplacementPlugin(),
+    // new HtmlWebpackPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
   ],
 });
