@@ -14,12 +14,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
@@ -40,7 +35,7 @@ module.exports = merge(common, {
       },
       {
         reload: false,
-      },
+      }
     ),
   ],
 });
