@@ -1,4 +1,10 @@
-# Webpack Starter Kit
+# IMT Front End Tools
+
+Helpful Links:
+[Wes Bos Eslint/Prettier Config](https://github.com/wesbos/eslint-config-wesbos)
+[Airbnb Style Guide](http://airbnb.io/javascript/)
+
+---
 
 > An opinionated starter kit using Webpack 4, SCSS, PostCSS, Browsersync, ESLint (airbnb) & Babel.
 
