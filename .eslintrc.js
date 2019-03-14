@@ -1,4 +1,5 @@
 // http://eslint.org/docs/user-guide/configuring
+// https://github.com/wesbos/eslint-config-wesbos
 module.exports = {
   "extends": [
     "airbnb",
