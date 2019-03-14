@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -18,15 +18,14 @@ module.exports = merge(common, {
       },
     ],
   },
+  optimization: {
+    minimizer: [new TerserPlugin()],
+  },
   plugins: [
     // https://github.com/webpack-contrib/mini-css-extract-plugin
     new MiniCssExtractPlugin({
       filename: '[name].css',
       chunkFilename: '[id].css',
-    }),
-    // https://github.com/webpack-contrib/uglifyjs-webpack-plugin
-    new UglifyJSPlugin({
-      extractComments: true,
     }),
   ],
 });

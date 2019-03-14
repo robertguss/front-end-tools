@@ -28,6 +28,7 @@
     "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.5.0",
     "postcss-clean": "^1.1.0",
+    "terser-webpack-plugin": "^1.2.3",
     "uglifyjs-webpack-plugin": "^2.1.2",
     "webpack": "^4.29.6",
     "webpack-merge": "^4.2.1",
