@@ -69,6 +69,7 @@
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.16.4",
+    "resolve-url-loader": "^3.0.1",
     "rucksack-css": "^1.0.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
