@@ -1,8 +1,8 @@
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 // const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const WriteFilePlugin = require('write-file-webpack-plugin');
+// const WriteFilePlugin = require('write-file-webpack-plugin');
 const path = require('path');
 // const webpack = require('webpack');
 const common = require('./webpack.common');
@@ -11,15 +11,17 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    clientLogLevel: 'none',
     contentBase: path.join(__dirname, 'dist'),
     // hot: true,
     // https: true,
     inline: false,
     port: 9000,
     watchContentBase: true,
-    // watchOptions: {
-    //   poll: true,
-    // },
+    watchOptions: {
+      poll: true,
+    },
+    writeToDisk: true,
   },
   module: {
     rules: [
@@ -49,28 +51,27 @@ module.exports = merge(common, {
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
     // https://github.com/gajus/write-file-webpack-plugin
-    new WriteFilePlugin({
-      useHashIndex: true,
-      // exclude hot-update files
-      test: /^(?!.*(hot)).*/,
-    }),
+    // new WriteFilePlugin({
+    //   useHashIndex: true,
+    //   // exclude hot-update files
+    //   test: /^(?!.*(hot)).*/,
+    // }),
     // https://github.com/Va1/browser-sync-webpack-plugin
-    new BrowserSyncPlugin(
-      // BrowserSync options
-      {
-        host: 'localhost',
-        open: false,
-        port: 3000,
-        // proxy: 'http://localhost:9000/',
-        proxy: 'https://vm6.insuremytrip.com/',
-      },
-      // plugin options
-      {
-        // prevent BrowserSync from reloading the page
-        // and let Webpack Dev Server take care of this
-        reload: true,
-      }
-    ),
+    // new BrowserSyncPlugin(
+    //   // BrowserSync options
+    //   {
+    //     host: 'localhost',
+    //     open: false,
+    //     port: 3000,
+    //     proxy: 'https://vm6.insuremytrip.com/',
+    //   },
+    //   // plugin options
+    //   {
+    //     // prevent BrowserSync from reloading the page
+    //     // and let Webpack Dev Server take care of this
+    //     // reload: true,
+    //   }
+    // ),
     // new HtmlWebpackPlugin(),
     // new webpack.HotModuleReplacementPlugin(),
   ],
