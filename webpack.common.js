@@ -1,6 +1,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const path = require('path');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   entry: {
@@ -33,13 +34,15 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
-    }
+      chunks: 'all',
+    },
   },
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
     new CleanWebpackPlugin(),
     // https://github.com/geowarin/friendly-errors-webpack-plugin
     new FriendlyErrorsWebpackPlugin(),
+    // https://www.npmjs.com/package/webpack-notifier
+    new WebpackNotifierPlugin(),
   ],
 };
