@@ -27,8 +27,13 @@ module.exports = {
     ],
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
