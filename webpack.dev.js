@@ -1,10 +1,7 @@
 // const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const merge = require('webpack-merge');
 const WebpackNotifierPlugin = require('webpack-notifier');
-// const WriteFilePlugin = require('write-file-webpack-plugin');
 const path = require('path');
-// const webpack = require('webpack');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
@@ -50,12 +47,6 @@ module.exports = merge(common, {
   plugins: [
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
-    // https://github.com/gajus/write-file-webpack-plugin
-    // new WriteFilePlugin({
-    //   useHashIndex: true,
-    //   // exclude hot-update files
-    //   test: /^(?!.*(hot)).*/,
-    // }),
     // https://github.com/Va1/browser-sync-webpack-plugin
     // new BrowserSyncPlugin(
     //   // BrowserSync options
@@ -72,7 +63,5 @@ module.exports = merge(common, {
     //     // reload: true,
     //   }
     // ),
-    // new HtmlWebpackPlugin(),
-    // new webpack.HotModuleReplacementPlugin(),
   ],
 });
