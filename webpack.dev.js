@@ -40,6 +40,7 @@ module.exports = merge(common, {
               sourceMap: true,
             },
           },
+          { loader: 'import-glob-loader' },
         ],
       },
     ],

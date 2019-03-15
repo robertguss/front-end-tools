@@ -1,9 +1,8 @@
-// @import 'variables';
+// Variables only (no actual CSS output)
+@import "variables/*.scss";
 
-// Import libraries
-// @import 'library/breakpoint';
-// @import 'library/typography';
-// import base files
-// @import 'base/normalize';
+// Tools – Mixins and functions (no actual CSS output)
+@import "tools/*.scss";
 
-// import component files
+// Components
+// @import 'components/*.scss';

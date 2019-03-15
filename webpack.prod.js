@@ -22,6 +22,7 @@ module.exports = merge(common, {
           'postcss-loader',
           'resolve-url-loader',
           'sass-loader',
+          'import-glob-loader',
         ],
       },
     ],
