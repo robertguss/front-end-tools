@@ -20,9 +20,11 @@ module.exports = {
     "prettier/prettier": [
       "error",
       {
-        "trailingComma": "es5",
-        "singleQuote": true,
+        "bracketSpacing": true,
         "printWidth": 80,
+        "proseWrap": "always",
+        "singleQuote": true,
+        "trailingComma": "es5",        
       }
     ],
   },
