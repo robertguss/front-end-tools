@@ -3,6 +3,7 @@
 Helpful Links:
 [Airbnb Style Guide](http://airbnb.io/javascript/)
 [Editor Config](https://editorconfig.org/)
+[ITCSS](https://www.hongkiat.com/blog/inverted-triangle-css-web-development/)
 
 ---
 
