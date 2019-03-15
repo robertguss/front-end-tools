@@ -7,6 +7,7 @@ module.exports = (on, config) => {
     // General
     // https://docs.cypress.io/guides/references/configuration.html#Global
     // ===
+    baseUrl: 'https://vm6.insuremytrip.com',
     watchForFileChanges: true,
     // ===
     // Environment variables
