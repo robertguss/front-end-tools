@@ -9,12 +9,6 @@
     "lint:fix": "eslint . --fix",
     "start": "webpack-dev-server --config webpack.dev.js"
   },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
