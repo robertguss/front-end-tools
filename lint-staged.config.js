@@ -1,10 +1,19 @@
 module.exports = {
   linters: {
     '**/*.+(js|ts|vue)': [
-      'eslint --fix',
+      'npm run lint:eslint',
       // 'jest --findRelatedTests',
       'git add',
     ],
-    '**/*.+(md|yml|yaml|css|scss)': ['prettier --write', 'git add'],
+    'package.json': ['npm run lint:prettier', 'git add'],
+    '*.vue': [
+      'npm run lint:eslint',
+      'npm run lint:stylelint',
+      'npm run lint:prettier',
+      'git add',
+      'npm run test:unit:file',
+    ],
+    '*.scss': ['npm run lint:stylelint', 'npm run lint:prettier', 'git add'],
+    '*.md': ['npm run lint:markdownlint', 'npm run lint:prettier', 'git add'],
   },
 };
