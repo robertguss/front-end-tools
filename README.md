@@ -3,6 +3,7 @@
 Helpful Links:
 [Wes Bos Eslint/Prettier Config](https://github.com/wesbos/eslint-config-wesbos)
 [Airbnb Style Guide](http://airbnb.io/javascript/)
+[Editor Config](https://editorconfig.org/)
 
 ---
 
