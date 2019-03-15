@@ -5,5 +5,6 @@ module.exports = {
       // 'jest --findRelatedTests',
       'git add',
     ],
+    '**/*.+(md|yml|yaml)': ['prettier --write', 'git add'],
   },
 };
