@@ -1,10 +1,6 @@
 module.exports = {
   linters: {
-    '**/*.+(js|ts|vue)': [
-      'npm run lint:eslint',
-      'git add',
-      // 'npm run test:unit:file',
-    ],
+    '**/*.+(js|ts|vue)': ['npm run lint:eslint', 'git add'],
     'package.json': ['npm run lint:prettier', 'git add'],
     '*.vue': [
       'npm run lint:eslint',
