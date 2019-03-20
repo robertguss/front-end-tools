@@ -1,5 +1,6 @@
 // http://eslint.org/docs/user-guide/configuring
 // https://github.com/wesbos/eslint-config-wesbos
+// https://vuejs.github.io/eslint-plugin-vue/user-guide/#faq
 module.exports = {
   'extends': [
     'airbnb-base',
