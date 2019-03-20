@@ -1,6 +1,11 @@
 import 'airbnb-browser-shims';
 import '../scss/index.scss';
+import Vue from 'vue';
+import Log from './components/Log.vue';
 
-if (process.env.NODE_ENV !== 'production') {
-  console.log('Looks like we are in development mode!');
-}
+Vue.config.productionTip = false;
+
+// eslint-disable-next-line no-new
+new Vue({
+  render: h => h(Log),
+}).$mount('#loadingBox');

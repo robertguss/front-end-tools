@@ -1,36 +1,46 @@
 // http://eslint.org/docs/user-guide/configuring
 // https://github.com/wesbos/eslint-config-wesbos
 module.exports = {
-  "extends": [
-    "airbnb-base",
-    "prettier",
+  'extends': [
+    'airbnb-base',
+    // https://github.com/vuejs/eslint-plugin-vue#bulb-rules
+    'plugin:vue/recommended',
+    // https://github.com/prettier/eslint-config-prettier
+    'prettier',
+    'prettier/standard',
+    'prettier/vue',
   ],
-  "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaVersion": 2019,
-    "ecmaFeatures": {
-      "impliedStrict": true    }
+  'parserOptions': {
+    'ecmaVersion': 2019,
+    'ecmaFeatures': {
+      'impliedStrict': true
+    },
+    'parser': 'babel-eslint',
   },
-  "env": {
-    "browser": true,
-    "node": true,
-    "jest": true
+  'env': {
+    'browser': true,
+    'node': true,
+    'jest': true
   },
-  "rules": {
-    "prettier/prettier": [
-      "error",
+  'rules': {
+    'vue/component-name-in-template-casing': [
+      'error',
+      'PascalCase',
       {
-        "bracketSpacing": true,
-        "printWidth": 80,
-        "proseWrap": "always",
-        "singleQuote": true,
-        "trailingComma": "es5",        
-      }
+        ignores: [
+          'component',
+          'template',
+          'transition',
+          'transition-group',
+          'keep-alive',
+          'slot',
+        ],
+      },
     ],
   },
-  "plugins": [
-    "html",
-    "prettier",
+  'plugins': [
+    'prettier',
+    'vue'
   ]
 }
 

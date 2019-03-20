@@ -26,6 +26,7 @@ module.exports = merge(common, {
         test: /\.(sa|sc|c)ss$/,
         use: [
           'style-loader',
+          'vue-style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -65,4 +66,9 @@ module.exports = merge(common, {
     //   }
     // ),
   ],
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    },
+  },
 });

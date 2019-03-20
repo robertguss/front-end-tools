@@ -1,6 +1,7 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
@@ -13,6 +14,10 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -42,6 +47,8 @@ module.exports = {
     new CleanWebpackPlugin(),
     // https://github.com/geowarin/friendly-errors-webpack-plugin
     new FriendlyErrorsWebpackPlugin(),
+    // https://vue-loader.vuejs.org/guide/#manual-setup
+    new VueLoaderPlugin(),
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
   ],
