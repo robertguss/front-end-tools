@@ -18,12 +18,11 @@
     "lint": "run-s lint:all:*",
     "start": "webpack-dev-server --config webpack.dev.js",
     "test:e2e": "cypress open",
-    "test:unit": "jest",
-    "test:unit:file": "npm run test:unit --findRelatedTests"
+    "test:unit": "jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-push": "lint-staged"
     }
   },
   "repository": {
