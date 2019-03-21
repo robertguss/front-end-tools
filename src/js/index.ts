@@ -1,5 +1,6 @@
 const obj
  =
+
  {
   name: 'Bob',
   age: 33
