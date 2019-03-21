@@ -1,52 +1,56 @@
-import CleanWebpackPlugin from "clean-webpack-plugin";
-import FriendlyErrorsWebpackPlugin from "friendly-errors-webpack-plugin";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
-import path from "path";
-import VueLoaderPlugin from "vue-loader/lib/plugin";
-import WebpackNotifierPlugin from "webpack-notifier";
+/* eslint-disable @typescript-eslint/no-var-requires */
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const path = require('path');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
   entry: {
-    app: "./src/js/index.ts"
+    app: './src/js/index.ts',
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'babel-loader',
       },
       {
         test: /\.ts$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
+        loader: 'ts-loader',
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        },
       },
       {
         test: /\.vue$/,
-        loader: "vue-loader"
+        loader: 'vue-loader',
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: [
           {
-            loader: "file-loader",
+            loader: 'file-loader',
             options: {
-              name: "[name].[ext]",
-              outputPath: "images/"
-            }
-          }
-        ]
-      }
-    ]
+              name: '[name].[ext]',
+              outputPath: 'images/',
+            },
+          },
+        ],
+      },
+    ],
   },
   output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    filename: '[name].bundle.js',
+    path: path.resolve(__dirname, 'dist'),
   },
   optimization: {
     splitChunks: {
-      chunks: "all"
-    }
+      chunks: 'all',
+    },
   },
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
@@ -58,9 +62,9 @@ module.exports = {
     // https://vue-loader.vuejs.org/guide/#manual-setup
     new VueLoaderPlugin(),
     // https://www.npmjs.com/package/webpack-notifier
-    new WebpackNotifierPlugin()
+    new WebpackNotifierPlugin(),
   ],
   resolve: {
-    extensions: [".ts", ".js", ".json"]
-  }
+    extensions: ['.ts', '.js', '.vue', '.json'],
+  },
 };

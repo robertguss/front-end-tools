@@ -5,9 +5,10 @@
     "module": "commonjs",
     "sourceMap": true,
     "outDir": "./dist/",
-    "noEmit": true,
+    // "noEmit": true,
     "strict": true,
     "esModuleInterop": true,
+    "moduleResolution": "node",
   },
   "include": [
     "./src/js/**/*"
