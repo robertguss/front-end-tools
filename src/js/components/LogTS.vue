@@ -9,7 +9,10 @@ import Component from 'vue-class-component';
 // to make props types inferable.
 const LogProps = Vue.extend({
   props: {
-    propMessage: String,
+    propMessage: {
+      type: String,
+      default: 'Hi',
+    },
   },
 });
 @Component({})
@@ -24,6 +27,7 @@ class Logger extends LogProps {
 
   // method
   greet() {
+    // eslint-disable-next-line no-console
     console.log(this.helloMsg);
   }
 }
