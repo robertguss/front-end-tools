@@ -3,25 +3,25 @@
 // https://vuejs.github.io/eslint-plugin-vue/user-guide/#faq
 module.exports = {
   extends: [
-    "airbnb-typescript/base",
-    "plugin:jest/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier/@typescript-eslint",
-    "prettier/standard"
+    'airbnb-typescript/base',
+    'plugin:jest/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaVersion: 2019,
     ecmaFeatures: {
-      impliedStrict: true
+      impliedStrict: true,
     },
-    sourceType: "module"
+    sourceType: 'module',
   },
   env: {
     browser: true,
     node: true,
-    jest: true
+    jest: true,
   },
   rules: {},
-  plugins: ["jest", "prettier", "@typescript-eslint"]
+  plugins: ['jest', 'prettier', '@typescript-eslint'],
 };
