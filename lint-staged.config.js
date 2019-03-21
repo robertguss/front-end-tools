@@ -1,8 +1,8 @@
 module.exports = {
   linters: {
-    '**/*.{js,ts}': ['npm run lint:eslint', 'npm run lint:prettier', 'git add'],
+    'src/js/**/*.{js,ts}': ['npm run lint:eslint', 'npm run lint:prettier', 'git add'],
     'package.json': ['npm run lint:prettier', 'git add'],
-    '*.vue': [
+    'src/js/**/*.vue': [
       'npm run lint:eslint',
       'npm run lint:stylelint',
       'npm run lint:prettier',
