@@ -1,55 +1,55 @@
-// const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-const merge = require('webpack-merge');
-const WebpackNotifierPlugin = require('webpack-notifier');
-const path = require('path');
-const common = require('./webpack.common');
+// const BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+import merge from "webpack-merge";
+import WebpackNotifierPlugin from "webpack-notifier";
+import path from "path";
+import common from "./webpack.common";
 
 module.exports = merge(common, {
-  mode: 'development',
-  devtool: 'source-map',
+  mode: "development",
+  devtool: "source-map",
   devServer: {
-    clientLogLevel: 'none',
-    contentBase: path.join(__dirname, 'dist'),
+    clientLogLevel: "none",
+    contentBase: path.join(__dirname, "dist"),
     // hot: true,
     // https: true,
     inline: false,
     port: 9000,
     watchContentBase: true,
     watchOptions: {
-      poll: true,
+      poll: true
     },
-    writeToDisk: true,
+    writeToDisk: true
   },
   module: {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
-          'vue-style-loader',
+          "style-loader",
+          "vue-style-loader",
           {
-            loader: 'css-loader',
+            loader: "css-loader",
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
-          'postcss-loader',
-          'resolve-url-loader',
+          "postcss-loader",
+          "resolve-url-loader",
           {
-            loader: 'sass-loader',
+            loader: "sass-loader",
             options: {
-              sourceMap: true,
-            },
+              sourceMap: true
+            }
           },
-          { loader: 'import-glob-loader' },
-        ],
+          { loader: "import-glob-loader" }
+        ]
       },
       { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
-    ],
+    ]
   },
   plugins: [
     // https://www.npmjs.com/package/webpack-notifier
-    new WebpackNotifierPlugin(),
+    new WebpackNotifierPlugin()
     // https://github.com/Va1/browser-sync-webpack-plugin
     // new BrowserSyncPlugin(
     //   // BrowserSync options
@@ -69,7 +69,7 @@ module.exports = merge(common, {
   ],
   resolve: {
     alias: {
-      vue$: 'vue/dist/vue.esm.js',
-    },
-  },
+      vue$: "vue/dist/vue.esm.js"
+    }
+  }
 });

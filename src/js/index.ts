@@ -1,10 +1,11 @@
-const obj = {
- name: 'Bob',
- age: 33,
- job: 'developer',
+import "airbnb-browser-shims";
+import "../scss/index.scss";
+import Vue from "vue";
+// import Log from './components/Log.vue';
 
+Vue.config.productionTip = false;
 
-         hobbies: ['fishing'],
-};
-
-console.log(obj);
+// eslint-disable-next-line no-new
+// new Vue({
+//   render: h => h(Log),
+// }).$mount('#loadingBox');
