@@ -4,11 +4,15 @@
 module.exports = {
   'extends': [
     'airbnb-base',
+    'airbnb-typescript',
+    'plugin:jest/recommended',
+    'plugin:@typescript-eslint/recommended',
     // https://github.com/vuejs/eslint-plugin-vue#bulb-rules
     'plugin:vue/recommended',
     // https://github.com/prettier/eslint-config-prettier
     'prettier',
     'prettier/standard',
+    'prettier/@typescript-eslint',
     'prettier/vue',
   ],
   'parserOptions': {
@@ -40,7 +44,9 @@ module.exports = {
     ],
   },
   'plugins': [
+    'jest',
     'prettier',
+    '@typescript-eslint',
     'vue'
   ]
 }

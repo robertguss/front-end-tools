@@ -1,5 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
@@ -9,7 +10,6 @@ module.exports = {
     app: './src/js/index.js',
     typescript: './src/js/index.ts',
   },
-  resolve: { extensions: [".ts", ".js", ".json"] },
   module: {
     rules: [
       {
@@ -19,7 +19,8 @@ module.exports = {
       },
       {
         test: /\.ts$/,
-        loader: 'awesome-typescript-loader',
+        exclude: /node_modules/,
+        loader: 'babel-loader',
       },
       {
         test: /\.vue$/,
@@ -51,6 +52,8 @@ module.exports = {
   plugins: [
     // https://github.com/johnagan/clean-webpack-plugin
     new CleanWebpackPlugin(),
+    // https://github.com/Realytics/fork-ts-checker-webpack-plugin
+    new ForkTsCheckerWebpackPlugin(),
     // https://github.com/geowarin/friendly-errors-webpack-plugin
     new FriendlyErrorsWebpackPlugin(),
     // https://vue-loader.vuejs.org/guide/#manual-setup
@@ -58,4 +61,7 @@ module.exports = {
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
   ],
+  resolve: {
+    extensions: [".ts", ".js", ".json"]
+  },
 };
