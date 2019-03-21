@@ -7,7 +7,7 @@ export default {
   name: "Log",
   data() {
     return {
-      logMessage: "<Log /> Vue Component Mounted."
+      logMessage: "<Log /> Vue Component Mounted!"
     };
   },
   mounted() {
