@@ -6,7 +6,7 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
   devServer: {
     clientLogLevel: 'none',
     contentBase: path.join(__dirname, 'dist'),
@@ -44,6 +44,7 @@ module.exports = merge(common, {
           { loader: 'import-glob-loader' },
         ],
       },
+      { enforce: "pre", test: /\.js$/, loader: "source-map-loader" }
     ],
   },
   plugins: [

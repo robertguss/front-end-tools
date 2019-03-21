@@ -7,13 +7,19 @@ const WebpackNotifierPlugin = require('webpack-notifier');
 module.exports = {
   entry: {
     app: './src/js/index.js',
+    typescript: './src/js/index.ts',
   },
+  resolve: { extensions: [".ts", ".js", ".json"] },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.ts$/,
+        loader: 'awesome-typescript-loader',
       },
       {
         test: /\.vue$/,
