@@ -1,7 +1,7 @@
 import 'airbnb-browser-shims';
 import '../scss/index.scss';
 import Vue from 'vue';
-import Log from "./components/Log.vue";
+import Log from './components/Log.vue';
 
 Vue.config.productionTip = false;
 
