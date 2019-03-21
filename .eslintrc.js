@@ -7,20 +7,17 @@ module.exports = {
     'airbnb-typescript/base',
     'plugin:jest/recommended',
     'plugin:@typescript-eslint/recommended',
-    // https://github.com/vuejs/eslint-plugin-vue#bulb-rules
-    'plugin:vue/recommended',
-    // https://github.com/prettier/eslint-config-prettier
     'prettier',
-    'prettier/standard',
     'prettier/@typescript-eslint',
-    'prettier/vue',
+    'plugin:prettier/recommended',
   ],
+  parser:  '@typescript-eslint/parser',
   'parserOptions': {
     'ecmaVersion': 2019,
     'ecmaFeatures': {
       'impliedStrict': true
     },
-    'parser': 'babel-eslint',
+    sourceType:  'module',
   },
   'env': {
     'browser': true,
@@ -28,25 +25,11 @@ module.exports = {
     'jest': true
   },
   'rules': {
-    'vue/component-name-in-template-casing': [
-      'error',
-      'PascalCase',
-      {
-        ignores: [
-          'component',
-          'template',
-          'transition',
-          'transition-group',
-          'keep-alive',
-          'slot',
-        ],
-      },
-    ],
+
   },
   'plugins': [
     'jest',
     'prettier',
     '@typescript-eslint',
-    'vue'
   ]
 }

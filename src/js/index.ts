@@ -1,8 +1,5 @@
-const obj
- =
-
- {
-  name: 'Bob',
+const obj = {
+  name: "Bob",
   age: 33
 };
 
