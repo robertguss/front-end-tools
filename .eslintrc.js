@@ -4,7 +4,7 @@
 module.exports = {
   'extends': [
     'airbnb-base',
-    'airbnb-typescript',
+    'airbnb-typescript/base',
     'plugin:jest/recommended',
     'plugin:@typescript-eslint/recommended',
     // https://github.com/vuejs/eslint-plugin-vue#bulb-rules
