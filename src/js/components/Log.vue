@@ -1,25 +1,36 @@
 <template>
-  <h1 class="log">Vue Log Component</h1>
+  <div></div>
 </template>
 
-<script>
-export default {
-  name: 'Log',
-  data() {
-    return {
-      logMessage: '<Log /> Vue Component Mounted.',
-    };
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'vue-class-component';
+// We declare the props separately
+// to make props types inferable.
+const LogProps = Vue.extend({
+  props: {
+    propMessage: {
+      type: String,
+      default: 'Hi',
+    },
   },
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.logMessage);
-  },
-};
-</script>
+});
+@Component({})
+class Logger extends LogProps {
+  // use prop values for initial data
+  helloMsg: string = `Hello, ${this.propMessage}`;
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-.log {
-  color: coral;
+  // lifecycle hook
+  mounted() {
+    this.greet();
+  }
+
+  // method
+  greet() {
+    // eslint-disable-next-line no-console
+    console.log(this.helloMsg);
+  }
 }
-</style>
+
+export default Logger;
+</script>
