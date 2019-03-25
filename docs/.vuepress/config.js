@@ -3,12 +3,17 @@ module.exports = {
   themeConfig: {
     sidebar: [
       {
+        title: 'Config',
+        collapsable: true,
+        children: [
+          '/config/config.md'
+        ]
+      },
+      {
         title: 'Standards',
         collapsable: true,
         children: [
-          '/standards/airbnb.md',
-          '/standards/eslint.md',
-          '/standards/prettier.md'
+          '/standards/airbnb.md'
         ]
       },
       {
