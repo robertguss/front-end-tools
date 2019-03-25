@@ -2,7 +2,7 @@
 // https://github.com/wesbos/eslint-config-wesbos
 // https://vuejs.github.io/eslint-plugin-vue/user-guide/#faq
 module.exports = {
-  'extends': [
+  extends: [
     'airbnb-base',
     // https://github.com/vuejs/eslint-plugin-vue#bulb-rules
     'plugin:vue/recommended',
@@ -11,19 +11,19 @@ module.exports = {
     'prettier/standard',
     'prettier/vue',
   ],
-  'parserOptions': {
-    'ecmaVersion': 2019,
-    'ecmaFeatures': {
-      'impliedStrict': true
+  parserOptions: {
+    ecmaVersion: 2019,
+    ecmaFeatures: {
+      impliedStrict: true,
     },
-    'parser': 'babel-eslint',
+    parser: 'babel-eslint',
   },
-  'env': {
-    'browser': true,
-    'node': true,
-    'jest': true
+  env: {
+    browser: true,
+    node: true,
+    jest: true,
   },
-  'rules': {
+  rules: {
     'vue/component-name-in-template-casing': [
       'error',
       'PascalCase',
@@ -39,8 +39,5 @@ module.exports = {
       },
     ],
   },
-  'plugins': [
-    'prettier',
-    'vue'
-  ]
-}
+  plugins: ['prettier', 'vue'],
+};
