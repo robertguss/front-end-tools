@@ -10,6 +10,6 @@ new Vue({
   el: '#loadingBox',
   render: (h) =>
     h(Log, {
-      props: { propMessage: 'from <LogTS />' },
+      props: { propMessage: 'World!' },
     }),
 });

@@ -5,10 +5,14 @@ import Log from './Log.vue';
 
 describe('Log', () => {
   // Now mount the component and you have the wrapper
-  const wrapper = mount(Log);
+  const wrapper = mount(Log, {
+    propsData: {
+      propMessage: 'World!',
+    },
+  });
   const logMessage = 'Hello, World!';
 
-  it('renders the correct message', () => {
+  it('renders "Hello, World!"', () => {
     expect(wrapper.html()).toContain(logMessage);
   });
 });

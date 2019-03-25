@@ -11,7 +11,7 @@ const LogProps = Vue.extend({
   props: {
     propMessage: {
       type: String,
-      default: 'World!',
+      default: '',
     },
   },
 });
