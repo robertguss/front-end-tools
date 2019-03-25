@@ -1,5 +1,5 @@
 <template>
-  <div></div>
+  <div>{{ helloMsg }}</div>
 </template>
 
 <script lang="ts">
@@ -11,7 +11,7 @@ const LogProps = Vue.extend({
   props: {
     propMessage: {
       type: String,
-      default: 'Hi',
+      default: 'World!',
     },
   },
 });
