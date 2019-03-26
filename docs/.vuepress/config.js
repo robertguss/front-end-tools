@@ -6,7 +6,8 @@ module.exports = {
         title: 'Config',
         collapsable: true,
         children: [
-          '/config/config.md'
+          '/config/config.md',
+          '/config/editor-setup.md'
         ]
       },
       {
