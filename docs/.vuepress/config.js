@@ -5,17 +5,12 @@ module.exports = {
       {
         title: 'Config',
         collapsable: true,
-        children: [
-          '/config/config.md',
-          '/config/editor-setup.md'
-        ]
+        children: ['/config/config.md', '/config/editor-setup.md'],
       },
       {
         title: 'Standards',
         collapsable: true,
-        children: [
-          '/standards/airbnb.md'
-        ]
+        children: ['/standards/javascript.md', '/standards/scss.md'],
       },
       {
         title: 'Styles',
@@ -24,32 +19,24 @@ module.exports = {
           'styles/BEM.md',
           'styles/itcss.md',
           'styles/postcss.md',
-          'styles/sass.md'
-        ]
+          'styles/sass.md',
+        ],
       },
       {
         title: 'Testing',
         collapsable: true,
-        children: [
-          '/testing/unit.md',
-          '/testing/e2e.md',
-          '/testing/vue-components.md'
-        ]
+        children: ['/testing/unit.md', '/testing/e2e.md'],
       },
       {
         title: 'Typescript',
         collapsable: true,
-        children: [
-          'typescript/typescript.md'
-        ]
+        children: ['typescript/typescript.md'],
       },
       {
         title: 'Vue',
         collapsable: true,
-        children: [
-          'vue/vue.md'
-        ]
-      }
-    ]
-  }
-}
+        children: ['vue/vue.md'],
+      },
+    ],
+  },
+};
