@@ -5,6 +5,9 @@ if (process.env.NODE_ENV === 'production') {
       tailwindcss: {},
       'postcss-preset-env': {},
       'rucksack-css': {},
+      '@fullhuman/postcss-purgecss': {
+        content: ['./**/*.html'],
+      },
       'postcss-clean': {
         level: 2,
       },
