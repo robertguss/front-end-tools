@@ -6,7 +6,7 @@ This repo contains all of the modern front-end tooling used across IMT sites
 
 ```bash
   # Git Clone this repo, where 'front-end-tools' is the name of your project
-  git clone git@gitlab.insuremytrip.com:rguss/front-end-tools.git front-end-tools
+  git clone git@github.com:robertguss/Front-End-Tools.git
 
   # cd into the repo's diectory
   cd front-end-tools
