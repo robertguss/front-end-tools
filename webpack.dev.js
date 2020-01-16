@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 // const BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 const path = require('path');
 const merge = require('webpack-merge');
@@ -8,19 +8,6 @@ const common = require('./webpack.common');
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'eval',
-  devServer: {
-    clientLogLevel: 'none',
-    contentBase: path.join(__dirname, 'dist'),
-    // hot: true,
-    // https: true,
-    inline: false,
-    port: 9000,
-    watchContentBase: true,
-    watchOptions: {
-      poll: true,
-    },
-    writeToDisk: true,
-  },
   module: {
     rules: [
       {
@@ -49,6 +36,8 @@ module.exports = merge(common, {
   plugins: [
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
+    // https://webpack.js.org/plugins/html-webpack-plugin/
+    new HtmlWebpackPlugin(),
     // https://github.com/Va1/browser-sync-webpack-plugin
     // new BrowserSyncPlugin(
     //   // BrowserSync options

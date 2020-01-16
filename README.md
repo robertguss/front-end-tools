@@ -26,7 +26,7 @@ Includes:
   npm i
 
   # start development server
-  npm run start
+  npm run dev
 
   # build for production
   npm run build
