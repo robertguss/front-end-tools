@@ -37,7 +37,9 @@ module.exports = merge(common, {
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
     // https://webpack.js.org/plugins/html-webpack-plugin/
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    }),
     // https://github.com/Va1/browser-sync-webpack-plugin
     // new BrowserSyncPlugin(
     //   // BrowserSync options
