@@ -1,6 +1,4 @@
-# IMT Front-End Tools
-
-This repo contains all of the modern front-end tooling used across IMT sites
+# Front-End Tools
 
 ## Installation & Use
 
@@ -12,13 +10,13 @@ This repo contains all of the modern front-end tooling used across IMT sites
   cd front-end-tools
 
   # install NPM modules
-  yarn
+  npm i
 
   # start development server
-  yarn start
+  npm run start
 
   # build for production
-  yarn build
+  npm run build
 ```
 
 ## Documentation for this repo can be found within ./docs and viewed with
@@ -26,8 +24,8 @@ This repo contains all of the modern front-end tooling used across IMT sites
 ```bash
   # this will start a local dev server with all documentation
   # defaults to http://localhost:8080
-  yarn docs:dev
+  npm run docs:dev
 
   # will build a static site with all documentation within ./docs/dist/
-  yarn docs:build
+  npm run docs:build
 ```
