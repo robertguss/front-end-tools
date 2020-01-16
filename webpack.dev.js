@@ -7,7 +7,7 @@ const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'eval',
   devServer: {
     clientLogLevel: 'none',
     contentBase: path.join(__dirname, 'dist'),
@@ -24,10 +24,9 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(pc|c)ss$/,
         use: [
           'style-loader',
-          'vue-style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -36,17 +35,16 @@ module.exports = merge(common, {
           },
           'postcss-loader',
           'resolve-url-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
           { loader: 'import-glob-loader' },
         ],
       },
       { enforce: 'pre', test: /\.js$/, loader: 'source-map-loader' },
     ],
+  },
+  output: {
+    filename: 'bundle.js',
+    chunkFilename: 'vendor.bundle.js',
+    path: path.resolve(__dirname, '../www/js/dist'),
   },
   plugins: [
     // https://www.npmjs.com/package/webpack-notifier
@@ -68,9 +66,4 @@ module.exports = merge(common, {
     //   }
     // ),
   ],
-  resolve: {
-    alias: {
-      vue$: 'vue/dist/vue.esm.js',
-    },
-  },
 });

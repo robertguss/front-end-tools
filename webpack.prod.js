@@ -1,9 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const glob = require('glob');
 const merge = require('webpack-merge');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+// const PurgecssPlugin = require('purgecss-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const common = require('./webpack.common');
 
@@ -16,13 +15,12 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /\.(pc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
           'postcss-loader',
           'resolve-url-loader',
-          'sass-loader',
           'import-glob-loader',
         ],
       },
@@ -31,15 +29,20 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [new TerserPlugin()],
   },
+  output: {
+    filename: 'bundle.js',
+    chunkFilename: 'vendor.bundle.js',
+    path: path.resolve(__dirname, '../www/js/dist'),
+  },
   plugins: [
     // https://github.com/webpack-contrib/mini-css-extract-plugin
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
+      filename: '../../css/dist/bundle.css',
+      chunkFilename: 'bundle.css',
     }),
     // https://github.com/FullHuman/purgecss-webpack-plugin
-    new PurgecssPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
-    }),
+    // new PurgecssPlugin({
+    //   paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+    // }),
   ],
 });

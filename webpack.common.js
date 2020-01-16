@@ -3,7 +3,6 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const path = require('path');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
 
 module.exports = {
@@ -21,13 +20,6 @@ module.exports = {
         test: /\.ts$/,
         exclude: /node_modules/,
         loader: 'ts-loader',
-        options: {
-          appendTsSuffixTo: [/\.vue$/],
-        },
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader',
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -43,10 +35,6 @@ module.exports = {
       },
     ],
   },
-  output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
   optimization: {
     splitChunks: {
       chunks: 'all',
@@ -59,12 +47,10 @@ module.exports = {
     new ForkTsCheckerWebpackPlugin(),
     // https://github.com/geowarin/friendly-errors-webpack-plugin
     new FriendlyErrorsWebpackPlugin(),
-    // https://vue-loader.vuejs.org/guide/#manual-setup
-    new VueLoaderPlugin(),
     // https://www.npmjs.com/package/webpack-notifier
     new WebpackNotifierPlugin(),
   ],
   resolve: {
-    extensions: ['.ts', '.js', '.vue', '.json'],
+    extensions: ['.ts', '.js', '.json'],
   },
 };

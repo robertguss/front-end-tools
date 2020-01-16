@@ -1,5 +1,18 @@
 # Front-End Tools
 
+Includes:
+
+- Webpack 4
+- Babel
+- PostCSS
+- Tailwind CSS
+- Prettier
+- Jest
+- Cypress
+- Stylelint
+- ESLint
+- Husky - linting on pre-commit git hook
+
 ## Installation & Use
 
 ```bash

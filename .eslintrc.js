@@ -1,21 +1,19 @@
 // http://eslint.org/docs/user-guide/configuring
 // https://github.com/wesbos/eslint-config-wesbos
-// https://vuejs.github.io/eslint-plugin-vue/user-guide/#faq
 module.exports = {
   extends: [
-    'airbnb-typescript/base',
+    'airbnb-base',
     'plugin:jest/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'prettier/@typescript-eslint',
     'plugin:prettier/recommended',
+    'plugin:cypress/recommended',
   ],
-  parser: '@typescript-eslint/parser',
+  parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 2019,
+    ecmaVersion: 2020,
     ecmaFeatures: {
       impliedStrict: true,
+      classes: true,
     },
-    sourceType: 'module',
   },
   env: {
     browser: true,
@@ -23,5 +21,5 @@ module.exports = {
     jest: true,
   },
   rules: {},
-  plugins: ['jest', 'prettier', '@typescript-eslint'],
+  plugins: ['jest', 'prettier'],
 };

@@ -1,7 +1,6 @@
 {
   "presets": [
     "airbnb",
-    "@babel/typescript"
   ],
   "plugins": [
     "@babel/proposal-class-properties",
